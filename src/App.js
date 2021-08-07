@@ -5,7 +5,7 @@ import Table from "./components/table/table";
 import { dataList,userInput } from "./components/context/context";
 import './App.css'
 function App() {
-  const [input,setInput] = useState('');
+  const [input,setInput] = useState();
   const [more, setMore] = useState('moreHide');
   const [btnCnt,setCnt] = useState(1);
   const [data,setData] = useState();
@@ -18,7 +18,14 @@ function App() {
         setMore('moreDisplay')
       }
   )},[])
-    
+  useEffect(()=>{
+    if(input===''){
+      setMore('moreDisplay')
+    }
+    else{
+      setMore('moreHide')
+    }
+  },[input])
   const handelChange = (event) =>{
     setInput(event.target.value);
   }

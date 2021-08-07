@@ -6,7 +6,7 @@ function Table(props){
     const data = useContext(dataList)
     const display =()=>{
         if(data!== undefined){
-            if(input === ''){
+            if(input === undefined){
                 let show = data.map(item=>{
                 return <tr key={item.objectID}>
                           <td>{item.objectID}</td>
