@@ -17,7 +17,7 @@ function Table(props){
                           <td><button onClick={()=>props.deleteItem(item)}>Delete</button></td>
                        </tr>
                 })
-                console.log(show)
+                // console.log(show)
                 return show.slice(0,props.btnCnt*10)
             }
             else{
@@ -40,7 +40,7 @@ function Table(props){
                               <td><button onClick={()=>props.deleteItem(item)}>Delete</button></td>
                            </tr>
                     }) 
-                    console.log(input)
+                    // console.log(input)
                     return show
             }
         }

@@ -14,7 +14,7 @@ function App() {
      fetch("https://hn.algolia.com/api/v1/search?query=")
      .then(res => res.json())
      .then((result)=>{
-        console.log(result.hits)
+        // console.log(result.hits)
         setData(result.hits)
         setMore('moreDisplay')
       }
