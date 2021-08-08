@@ -48,15 +48,15 @@ function Table(props){
     }
     return(
         (data === undefined)? <p>wait...</p>:
-        <table className="table table-striped">
+        <table className="mytable">
           <thead>
-             <tr className="bg-primary">
-               <th scope="col">ID</th>
-               <th scope="col">Author</th>
-               <th scope="col">Comments</th>
-               <th scope="col">Title</th>
-               <th scope="col">URL</th>
-               <th scope="col">Remove</th>
+             <tr>
+               <th >ID</th>
+               <th className='author'>Author</th>
+               <th className='comments'>Comments</th>
+               <th className='title'>Title</th>
+               <th className='url'>URL</th>
+               <th className='remove'>Remove</th>
              </tr>
           </thead>
           <tbody>

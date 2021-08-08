@@ -7,9 +7,10 @@ import './App.css'
 function App() {
   const [input,setInput] = useState();
   const [more, setMore] = useState('moreHide');
-  const [btnCnt,setCnt] = useState(1);
+  //track more button clicked times in order to display 10 item each time
+  const [btnCnt,setCnt] = useState(1); 
   const [data,setData] = useState();
-  useEffect(()=>{
+  useEffect(()=>{ //fetch data from api
      fetch("https://hn.algolia.com/api/v1/search?query=")
      .then(res => res.json())
      .then((result)=>{
@@ -31,6 +32,9 @@ function App() {
   }
   const deleteItem = (target)=>{
     let tmp = data.filter((item)=>{return item!== target})
+    if(tmp.length<=10){
+      setMore('moreHide')
+    }
     setData(tmp)
   }
   const clickMore = ()=>{
@@ -41,16 +45,13 @@ function App() {
     <userInput.Provider value ={input}>
     <dataList.Provider value={data}>
       <div className='container'>
-        <div className='row'>
-           <Title/>
-        </div>
-        <div className='row'>
+          <Title/>
           <Search handelChange={handelChange}/>
-        </div>
-        <div className='row'>
           <Table deleteItem={deleteItem} btnCnt={btnCnt}/>
-        </div>
-        <button className={more} onClick={clickMore}>More</button>
+          <div className='btnWrap'>
+            <button className={more} onClick={clickMore}>More</button>
+          </div>
+          
       </div>
     </dataList.Provider>
     </userInput.Provider>

@@ -3,4 +3,19 @@
 }
 .moreDisplay{
     display: block;
+    width: 100px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin: 0 auto;
+}
+button{
+    font-size:medium;
+    padding: 10px;
+
+}
+.btnWrap{
+    margin: auto;
 }

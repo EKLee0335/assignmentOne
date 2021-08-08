@@ -1,3 +1,32 @@
 thead tr th{
     color: white;
 }
+th,td{
+    padding: 10px;
+}
+thead{
+    background-color:cornflowerblue;
+}
+.mytable{
+    border-spacing:0px;
+    width: 100%;
+    text-align: left;
+}
+.id{
+    width: 10%;
+}
+.author{
+    width: 10%;
+}
+.comments{
+   width: 10%;
+}
+.title{
+  width: 30%;
+}
+.url{
+  width: 30%;
+}
+.remove{
+  width: 10%;
+}
